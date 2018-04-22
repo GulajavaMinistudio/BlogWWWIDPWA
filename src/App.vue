@@ -1,12 +1,6 @@
 <template>
   <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
-    <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
-    </main>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -19,16 +13,17 @@ export default {
 <style>
 body {
   margin: 0;
+  background: #f2f2f2;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
 
-main {
+/* main {
   text-align: center;
   margin-top: 40px;
 }
@@ -50,5 +45,5 @@ header span {
   font-weight: 400;
   box-sizing: border-box;
   padding-top: 16px;
-}
+} */
 </style>

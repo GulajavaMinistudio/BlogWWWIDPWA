@@ -1,15 +1,53 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Hello from '@/components/Hello';
 
 Vue.use(Router);
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Hello',
-      component: Hello,
+
+const BeritaFeedHome = () => import(/* webpackChunkName: "home-berita" */'@/components/beritafeeds/BeritaFeeds');
+
+const BeritaDetail = () => import(/* webpackChunkName: "detail-berita" */'@/components/beritadetails/BeritaDetail');
+
+const KategoriBerita = () => import(/* webpackChunkName: "daftar-kategori-berita" */'@/components/beritakategorilist/BeritaKategoriList');
+
+const BeritaFeedKategori = () => import(/* webpackChunkName: "daftar-berita-dengan-kategori" */'@/components/beritafeedskategori/BeritaFeedsKategori');
+
+const TentangAplikasi = () => import(/* webpackChunkName: "tentang-aplikasi-web" */'@/components/aboutapp/TentangApp');
+
+const baseRouter = [
+  {
+    path: '/',
+    name: 'BeritaFeeds',
+    component: BeritaFeedHome,
+  },
+  {
+    path: '/detail/:idberita/:judulhalaman',
+    name: 'BeritaDetail',
+    component: BeritaDetail,
+  },
+  {
+    path: '/daftar-kategori-berita',
+    name: 'BeritaKategoriList',
+    component: KategoriBerita,
+  },
+  {
+    path: '/berita-kategori/:idkategori',
+    name: 'BeritaDenganKategori',
+    component: BeritaFeedKategori,
+  },
+  {
+    path: '/tentang-aplikasi',
+    name: 'TentangAplikasiWeb',
+    component: TentangAplikasi,
+  },
+  {
+    path: '*',
+    redirect: {
+      name: 'BeritaFeeds',
     },
-  ],
+  },
+];
+
+export default new Router({
+  routes: baseRouter,
 });
