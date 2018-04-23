@@ -1,6 +1,7 @@
 {
-  "name": "blogwwwidpwa",
+  "name": "BlogWWWID",
   "short_name": "BlogWWWID",
+  "description": "Aplikasi yang berisi umpan berita dari situs Medium WWWID Indonesia.",
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",
@@ -15,6 +16,6 @@
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "background_color": "#fff",
+  "theme_color": "#03a9f4"
 }
